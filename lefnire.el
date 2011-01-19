@@ -1,5 +1,3 @@
-;(add-to-list 'load-path "~/mybash/emacs/custom")
-
 ;;; --------- Misc ---------------- ;;;
 
 ;;; Fix junk characters in shell mode
@@ -53,13 +51,13 @@
 
 ;;; MobileOrg
 ;; Set to the location of your Org files on your local system
-(setq org-directory "~/Dropbox/MobileOrg/LocalOrg")
+(setq org-directory "~/org")
 ;; Set to the name of the file where new notes will be stored
-(setq org-mobile-inbox-for-pull "~/Dropbox/MobileOrg/LocalOrg/mobileorg.org")
+(setq org-mobile-inbox-for-pull "~/org/flagged.org")
 ;; Set to <your Dropbox root directory>/MobileOrg.
 (setq org-mobile-directory "~/Dropbox/MobileOrg")
-(setq org-agenda-files (quote ("~/Dropbox/MobileOrg/LocalOrg/main.org")))
-(setq org-mobile-files (quote (org-agenda-files "~/Dropbox/MobileOrg/LocalOrg/main.org")))
+(setq org-agenda-files (quote ("~/org/main.org")))
+(setq org-mobile-files (quote (org-agenda-files "~/org/main.org")))
 
 ;;; --------- ECB ---------------- ;;;
 
