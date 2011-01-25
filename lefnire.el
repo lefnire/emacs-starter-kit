@@ -1,11 +1,11 @@
 ; ########  Misc.  ########
 ; #########################
+
 ;;; w3m web browser
 (require 'w3m-load)
 
 ;;; Fix junk characters in shell mode
-(add-hook 'shell-mode-hook
-         'ansi-color-for-comint-mode-on)
+(add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 ;;; Don't automatically create ~ files
 (setq make-backup-files nil)
@@ -16,8 +16,33 @@
 (global-font-lock-mode 1)
 (setq warning-suppress-types nil)
 
-; ########  ECB  ########
-; #######################
+; ########  Macros  ########
+; ##########################
+(fset 'ocdevel-add-subtask
+   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote (" [%]MOC" 0 "%d")) arg)))
+(global-set-key "\C-x\C-k1" 'ocdevel-add-subtask)
+
+; ########  Tip of the Day  ########
+; ##################################
+(require 'cl)
+(defun totd ()
+ (interactive)
+ (with-output-to-temp-buffer "*Tip of the day*"
+   (let* ((commands (loop for s being the symbols
+                         when (commandp s) collect s))
+         (command (nth (random (length commands)) commands)))
+    (princ
+     (concat "Your tip for the day is:\n========================\n\n"
+             (describe-function command)
+             "\n\nInvoke with:\n\n"
+             (with-temp-buffer
+               (where-is command t)
+               (buffer-string)))))))
+(totd)
+
+
+; ########  Project Managment  ########
+; #####################################
 ;;; CEDET
 (load-file (concat user-specific-dir "/cedet/common/cedet.el"))
 (global-ede-mode 1)                      ; Enable the Project management system
@@ -33,7 +58,7 @@
 (require 'ecb) ;; load everything at startup
 ;(require 'ecb-autoloads) ;; if too slow, load everything dynamically
 
-; ########  Drupal ########
+; ########  PHP ###########
 ; #########################
 (load "nxhtml/autostart.el")
 (define-derived-mode drupal-mode php-mode "Drupal"
@@ -75,7 +100,6 @@
 (speedbar-add-supported-extension ".tpl.php") ; not necessarily required
 (speedbar-add-supported-extension ".test") ; not necessarily required
 
-
 ; ########  Anything  ########
 ; ############################
 (add-to-list 'load-path (concat user-specific-dir "/anything"))
@@ -84,29 +108,11 @@
 ;anything-match-plugin, you can enable/disable it afterward with M-x anything-c-toggle-match-plugin
 ;(require 'anything-match-plugin)
 
-; ########  Egg  ##########
-; #########################
+; ########  Version Control  ##########
+; #####################################
 ;(add-to-list 'load-path (concat user-specific-dir "/egg"))
 ;(require 'egg)
 
-
-; ########  Tip of the Day  ########
-; ##################################
-(require 'cl)
-(defun totd ()
- (interactive)
- (with-output-to-temp-buffer "*Tip of the day*"
-   (let* ((commands (loop for s being the symbols
-                         when (commandp s) collect s))
-         (command (nth (random (length commands)) commands)))
-    (princ
-     (concat "Your tip for the day is:\n========================\n\n"
-             (describe-function command)
-             "\n\nInvoke with:\n\n"
-             (with-temp-buffer
-               (where-is command t)
-               (buffer-string)))))))
-(totd)
 
 
 ; ########  Org Mode  ########
@@ -136,13 +142,6 @@
 ;; me up at for a long time
 (setq org-agenda-files (quote ("~/org/main.org")))
 (setq org-mobile-files (quote (org-agenda-files "~/org/main.org")))
-
-; ########  Macros  ########
-; ##########################
-(fset 'ocdevel-add-subtask
-   (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote (" [%]MOC" 0 "%d")) arg)))
-(global-set-key "\C-x\C-k1" 'ocdevel-add-subtask)
-
 
 ; ########  Custom Variables  ########
 ; ####################################
