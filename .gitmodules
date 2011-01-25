@@ -10,3 +10,6 @@
 [submodule "lefnire/org-mode"]
 	path = lefnire/org-mode
 	url = https://github.com/emacsmirror/org-mode.git
+[submodule "lefnire/w3m"]
+	path = lefnire/w3m
+	url = https://github.com/emacsmirror/w3m.git

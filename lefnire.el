@@ -1,5 +1,8 @@
 ;;; --------- Misc ---------------- ;;;
 
+;;; w3m web browser
+(require 'w3m-load)
+
 ;;; Fix junk characters in shell mode
 (add-hook 'shell-mode-hook
          'ansi-color-for-comint-mode-on)
@@ -56,6 +59,9 @@
 (setq org-mobile-inbox-for-pull "~/org/flagged.org")
 ;; Set to <your Dropbox root directory>/MobileOrg.
 (setq org-mobile-directory "~/Dropbox/MobileOrg")
+;; Make sure this is NOT "index.org", it will override
+;; ~/MobileOrg/index.org maybe obvious to some, but tripped
+;; me up at for a long time
 (setq org-agenda-files (quote ("~/org/main.org")))
 (setq org-mobile-files (quote (org-agenda-files "~/org/main.org")))
 
