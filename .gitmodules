@@ -13,3 +13,6 @@
 [submodule "lefnire/w3m"]
 	path = lefnire/w3m
 	url = https://github.com/emacsmirror/w3m.git
+[submodule "lefnire/anything"]
+	path = lefnire/anything
+	url = https://github.com/emacsmirror/anything.git
