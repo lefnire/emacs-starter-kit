@@ -16,3 +16,9 @@
 [submodule "lefnire/anything"]
 	path = lefnire/anything
 	url = https://github.com/emacsmirror/anything.git
+[submodule "lefnire/auto-complete"]
+	path = lefnire/auto-complete
+	url = https://github.com/emacsmirror/auto-complete.git
+[submodule "lefnire/yasnippet"]
+	path = lefnire/yasnippet
+	url = https://github.com/emacsmirror/yasnippet.git

@@ -1,5 +1,14 @@
 ; ########  Misc.  ########
 ; #########################
+(require 'cl)
+
+;;; Basic configs
+(setq scroll-step 1)
+(global-hl-line-mode 1)
+
+;; Show lines & columns
+(line-number-mode 1)
+(column-number-mode 1)
 
 ;;; w3m web browser
 (require 'w3m-load)
@@ -13,6 +22,13 @@
 ;;; Geben
 (autoload 'geben "geben" "PHP Debugger on Emacs" t)
 
+;;; Goto Last Change
+(require 'goto-last-change)
+(global-set-key "\C-x\C-\\" 'goto-last-change)
+
+;;; Todochiku
+;(require 'todochiku)
+
 (global-font-lock-mode 1)
 (setq warning-suppress-types nil)
 
@@ -21,25 +37,6 @@
 (fset 'ocdevel-add-subtask
    (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote (" [%]MOC" 0 "%d")) arg)))
 (global-set-key "\C-x\C-k1" 'ocdevel-add-subtask)
-
-; ########  Tip of the Day  ########
-; ##################################
-(require 'cl)
-(defun totd ()
- (interactive)
- (with-output-to-temp-buffer "*Tip of the day*"
-   (let* ((commands (loop for s being the symbols
-                         when (commandp s) collect s))
-         (command (nth (random (length commands)) commands)))
-    (princ
-     (concat "Your tip for the day is:\n========================\n\n"
-             (describe-function command)
-             "\n\nInvoke with:\n\n"
-             (with-temp-buffer
-               (where-is command t)
-               (buffer-string)))))))
-(totd)
-
 
 ; ########  Project Managment  ########
 ; #####################################
@@ -57,6 +54,7 @@
 (add-to-list 'load-path (concat user-specific-dir "/ecb"))
 (require 'ecb) ;; load everything at startup
 ;(require 'ecb-autoloads) ;; if too slow, load everything dynamically
+(ecb-activate)
 
 ; ########  PHP ###########
 ; #########################
@@ -67,7 +65,7 @@
   (setq indent-tabs-mode nil)
   (setq fill-column 78)
   (setq show-trailing-whitespace t)
-  (add-hook 'before-save-hook 'delete-trailing-whitespace)
+;  (add-hook 'before-save-hook 'delete-trailing-whitespace)
   (c-set-offset 'case-label '+)
   (c-set-offset 'arglist-close 'c-lineup-arglist-operators)
   (c-set-offset 'arglist-intro '+) ; for FAPI arrays and DBTNG
@@ -83,6 +81,14 @@
 (add-to-list 'auto-mode-alist '("\\.engine$" . drupal-mode))
 (add-to-list 'auto-mode-alist '("\\.test$" . drupal-mode))
 (add-to-list 'auto-mode-alist '("\\.info" . conf-windows-mode))
+
+; ########  Yasnippet ###########
+; ###############################
+(add-to-list 'load-path (concat user-specific-dir "/yasnippet"))
+(require 'yasnippet) ;; not yasnippet-bundle
+(yas/initialize)
+(yas/load-directory (concat user-specific-dir "/yasnippet/snippets"))
+
 
 ; ########  Speed Bar  ########
 ; #############################
@@ -102,11 +108,11 @@
 
 ; ########  Anything  ########
 ; ############################
-(add-to-list 'load-path (concat user-specific-dir "/anything"))
-(require 'anything-config)
-;Note that if you don't require
-;anything-match-plugin, you can enable/disable it afterward with M-x anything-c-toggle-match-plugin
-;(require 'anything-match-plugin)
+;(add-to-list 'load-path (concat user-specific-dir "/anything"))
+;(require 'anything-config)
+;;Note that if you don't require
+;;anything-match-plugin, you can enable/disable it afterward with M-x anything-c-toggle-match-plugin
+;;(require 'anything-match-plugin)
 
 ; ########  Version Control  ##########
 ; #####################################
@@ -142,6 +148,23 @@
 ;; me up at for a long time
 (setq org-agenda-files (quote ("~/org/main.org")))
 (setq org-mobile-files (quote (org-agenda-files "~/org/main.org")))
+
+; ########  Tip of the Day  ########
+; ##################################
+(defun totd ()
+ (interactive)
+ (with-output-to-temp-buffer "*Tip of the day*"
+   (let* ((commands (loop for s being the symbols
+                         when (commandp s) collect s))
+         (command (nth (random (length commands)) commands)))
+    (princ
+     (concat "Your tip for the day is:\n========================\n\n"
+             (describe-function command)
+             "\n\nInvoke with:\n\n"
+             (with-temp-buffer
+               (where-is command t)
+               (buffer-string)))))))
+(totd)
 
 ; ########  Custom Variables  ########
 ; ####################################
