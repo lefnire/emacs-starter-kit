@@ -19,3 +19,6 @@
 [submodule "lefnire/yasnippet"]
 	path = lefnire/yasnippet
 	url = https://github.com/emacsmirror/yasnippet.git
+[submodule "lefnire/nxhtml"]
+	path = lefnire/nxhtml
+	url = https://github.com/emacsmirror/nxhtml.git
