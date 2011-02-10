@@ -11,7 +11,7 @@
 (column-number-mode 1)
 
 ;;; w3m web browser
-(require 'w3m-load)
+;(require 'w3m-load)
 
 ;;; Fix junk characters in shell mode
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
@@ -49,7 +49,7 @@
 
 ; ########  PHP ###########
 ; #########################
-(load "nxhtml/autostart.el")
+(load (concat user-specific-dir "/nxhtml/autostart.el"))
 (define-derived-mode drupal-mode php-mode "Drupal"
   "Major mode for Drupal coding.\n\n\\{drupal-mode-map}"
   (setq c-basic-offset 2)
