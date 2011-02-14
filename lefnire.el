@@ -114,8 +114,8 @@
 
 ; ########  Org Mode  ########
 ; ############################
-(setq load-path (cons (concat user-specific-dir "/org-mode/lisp") load-path))
-(setq load-path (cons (concat user-specific-dir "/org-mode/contrib/lisp") load-path))
+;(setq load-path (cons (concat user-specific-dir "/org-mode/lisp") load-path))
+;(setq load-path (cons (concat user-specific-dir "/org-mode/contrib/lisp") load-path))
 (require 'org-install)
 ;; The following lines are always needed.  Choose your own keys.
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
@@ -175,7 +175,7 @@
  '(ecb-layout-window-sizes nil)
  '(ecb-options-version "2.40")
  '(ecb-show-sources-in-directories-buffer (quote always))
- '(ecb-source-path (quote ("/FILES/workspace/goingon/drupal" "~/mybash" ("/" "/"))))
+ '(ecb-source-path (quote ("~/workspace/goingon/drupal" "~/mybash" ("/" "/"))))
  '(ecb-tree-indent 1)
  '(egg-buffer-hide-sub-blocks-on-start (quote (egg-file-log-buffer-mode egg-diff-buffer-mode)))
  '(egg-enable-tooltip t)
