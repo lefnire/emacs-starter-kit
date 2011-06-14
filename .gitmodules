@@ -16,9 +16,6 @@
 [submodule "lefnire/yasnippet"]
 	path = lefnire/yasnippet
 	url = https://github.com/emacsmirror/yasnippet.git
-[submodule "lefnire/nxhtml"]
-	path = lefnire/nxhtml
-	url = https://github.com/emacsmirror/nxhtml.git
 [submodule "lefnire/org-mode"]
 	path = lefnire/org-mode
 	url = https://github.com/emacsmirror/org-mode.git
