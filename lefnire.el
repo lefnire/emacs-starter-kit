@@ -114,8 +114,8 @@
 
 ; ########  Org Mode  ########
 ; ############################
-;(setq load-path (cons (concat user-specific-dir "/org-mode/lisp") load-path))
-;(setq load-path (cons (concat user-specific-dir "/org-mode/contrib/lisp") load-path))
+(setq load-path (cons (concat user-specific-dir "/org-mode/lisp") load-path))
+(setq load-path (cons (concat user-specific-dir "/org-mode/contrib/lisp") load-path))
 (require 'org-install)
 ;; The following lines are always needed.  Choose your own keys.
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
