@@ -1,15 +1,9 @@
-[submodule "lefnire/cedet"]
-	path = lefnire/cedet
-	url = https://github.com/emacsmirror/cedet.git
 [submodule "lefnire/ecb"]
 	path = lefnire/ecb
 	url = https://github.com/emacsmirror/ecb.git
 [submodule "lefnire/egg"]
 	path = lefnire/egg
 	url = https://github.com/byplayer/egg.git
-[submodule "lefnire/org-mode"]
-	path = lefnire/org-mode
-	url = https://github.com/emacsmirror/org-mode.git
 [submodule "lefnire/w3m"]
 	path = lefnire/w3m
 	url = https://github.com/emacsmirror/w3m.git
@@ -22,3 +16,6 @@
 [submodule "lefnire/yasnippet"]
 	path = lefnire/yasnippet
 	url = https://github.com/emacsmirror/yasnippet.git
+[submodule "lefnire/nxhtml"]
+	path = lefnire/nxhtml
+	url = https://github.com/emacsmirror/nxhtml.git
