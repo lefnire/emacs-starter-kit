@@ -146,8 +146,18 @@
 ;; Make sure this is NOT "index.org", it will override
 ;; ~/MobileOrg/index.org maybe obvious to some, but tripped
 ;; me up at for a long time
-(setq org-agenda-files (quote ("~/org/main.org")))
-(setq org-mobile-files (quote (org-agenda-files "~/org/main.org")))
+(setq org-agenda-files (quote ("~/org/main.org" "~/org/goingon.org" "~/org/emacs.org")))
+(setq org-mobile-files (quote (org-agenda-files "~/org/main.org" "~/org/goingon.org" "~/org/emacs.org")))
+
+(setq org-agenda-custom-commands
+      '(("w" todo "TODAY")
+        ("h" agenda "" ((org-agenda-show-all-dates nil)))
+        ;("W" agenda "" ((org-agenda-ndays 21)
+        ;               (org-agenda-show-all-dates nil)))
+        ;("A" agenda ""
+        ; ((org-agenda-ndays 1)
+        ; (org-agenda-overriding-header "Today")))
+        ))
 
 ; ########  Tip of the Day  ########
 ; ##################################
@@ -179,12 +189,11 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(ecb-auto-activate nil)
  '(ecb-layout-name "left7")
  '(ecb-layout-window-sizes nil)
  '(ecb-options-version "2.40")
  '(ecb-show-sources-in-directories-buffer (quote always))
- '(ecb-source-path (quote ("/FILES/workspace/goingon/drupal" "~/mybash" ("/" "/"))))
+ '(ecb-source-path (quote ("/FILES/workspace/noc/drupal/sites/all" "/FILES/workspace" "~/mybash" ("/" "/"))))
  '(ecb-tree-indent 1)
  '(egg-buffer-hide-sub-blocks-on-start (quote (egg-file-log-buffer-mode egg-diff-buffer-mode)))
  '(egg-enable-tooltip t)
