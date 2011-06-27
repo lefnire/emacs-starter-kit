@@ -114,8 +114,8 @@
 
 ; ########  Org Mode  ########
 ; ############################
-(setq load-path (cons (concat user-specific-dir "/org-mode/lisp") load-path))
-(setq load-path (cons (concat user-specific-dir "/org-mode/contrib/lisp") load-path))
+;; (setq load-path (cons (concat user-specific-dir "/org-mode/lisp") load-path))
+;; (setq load-path (cons (concat user-specific-dir "/org-mode/contrib/lisp") load-path))
 (require 'org-install)
 ;; The following lines are always needed.  Choose your own keys.
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
@@ -137,8 +137,8 @@
 ;; Make sure this is NOT "index.org", it will override
 ;; ~/MobileOrg/index.org maybe obvious to some, but tripped
 ;; me up at for a long time
-(setq org-agenda-files (quote ("~/org/main.org" "~/org/goingon.org" "~/org/emacs.org")))
-(setq org-mobile-files (quote (org-agenda-files "~/org/main.org" "~/org/goingon.org" "~/org/emacs.org")))
+(setq org-agenda-files (quote ("~/org/main.org" "~/org/goingon.org" "~/org/refcard.org")))
+(setq org-mobile-files (quote (org-agenda-files "~/org/main.org" "~/org/goingon.org" "~/org/refcard.org")))
 
 (setq org-agenda-custom-commands
       '(("w" todo "TODAY")
