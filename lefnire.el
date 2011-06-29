@@ -114,15 +114,17 @@
 
 ; ########  Org Mode  ########
 ; ############################
-;; (setq load-path (cons (concat user-specific-dir "/org-mode/lisp") load-path))
-;; (setq load-path (cons (concat user-specific-dir "/org-mode/contrib/lisp") load-path))
+(setq load-path (cons (concat user-specific-dir "/org-mode/lisp") load-path))
+(setq load-path (cons (concat user-specific-dir "/org-mode/contrib/lisp") load-path))
 (require 'org-install)
 ;; The following lines are always needed.  Choose your own keys.
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 (add-hook 'org-mode-hook 'turn-on-font-lock) ; not needed when global-font-lock-mode is on
-;; (global-set-key "\C-cl" 'org-store-link)
-;; (global-set-key "\C-ca" 'org-agenda)
-;; (global-set-key "\C-cb" 'org-iswitchb)
+;; These should be accessible through global keys (i.e. anywhere in Emacs, not just in Org buffers)
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
 
 ;;;Custom
 (setq org-todo-keywords '((sequence "TODO" "WAITING" "|" "DONE")))
