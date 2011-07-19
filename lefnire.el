@@ -143,7 +143,7 @@
 (setq org-mobile-files (quote (org-agenda-files "~/org/main.org" "~/org/goingon.org" "~/org/refcard.org")))
 
 (setq org-agenda-custom-commands
-      '(("w" todo "TODAY")
+      '(("w" todo "NEXT")
         ("h" agenda "" ((org-agenda-show-all-dates nil)))
         ;("W" agenda "" ((org-agenda-ndays 21)
         ;               (org-agenda-show-all-dates nil)))
