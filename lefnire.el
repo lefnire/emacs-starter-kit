@@ -186,7 +186,7 @@
  '(ecb-layout-window-sizes nil)
  '(ecb-options-version "2.40")
  '(ecb-show-sources-in-directories-buffer (quote always))
- '(ecb-source-path (quote ("/FILES/workspace/noc/drupal/sites/all" "/FILES/workspace" "~/mybash" ("/" "/"))))
+ '(ecb-source-path (quote ("~/workspace/noc/drupal/sites/all" "~/workspace" "~/mybash" ("/" "/"))))
  '(ecb-tree-indent 1)
  '(egg-buffer-hide-sub-blocks-on-start (quote (egg-file-log-buffer-mode egg-diff-buffer-mode)))
  '(egg-enable-tooltip t)
