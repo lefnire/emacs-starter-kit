@@ -75,10 +75,10 @@
 
 ; ########  Yasnippet ###########
 ; ###############################
-(add-to-list 'load-path (concat user-specific-dir "/yasnippet"))
-(require 'yasnippet) ;; not yasnippet-bundle
-(yas/initialize)
-(yas/load-directory (concat user-specific-dir "/yasnippet/snippets"))
+;(add-to-list 'load-path (concat user-specific-dir "/yasnippet"))
+;(require 'yasnippet) ;; not yasnippet-bundle
+;(yas/initialize)
+;(yas/load-directory (concat user-specific-dir "/yasnippet/snippets"))
 
 
 ; ########  Speed Bar  ########
