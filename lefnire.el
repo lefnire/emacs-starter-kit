@@ -126,31 +126,16 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 
+;;; MobileOrg
+(setq org-directory "~/org")
+(setq org-mobile-inbox-for-pull "~/org/flagged.org")
+(setq org-mobile-directory "~/Dropbox/MobileOrg")
+
 ;;;Custom
 (setq org-todo-keywords '((sequence "TODO" "WAITING" "|" "DONE")))
-
-;;; MobileOrg
-;; Set to the location of your Org files on your local system
-(setq org-directory "~/org")
-;; Set to the name of the file where new notes will be stored
-(setq org-mobile-inbox-for-pull "~/org/flagged.org")
-;; Set to <your Dropbox root directory>/MobileOrg.
-(setq org-mobile-directory "~/Dropbox/MobileOrg")
-;; Make sure this is NOT "index.org", it will override
-;; ~/MobileOrg/index.org maybe obvious to some, but tripped
-;; me up at for a long time
 (setq org-agenda-files (quote ("~/org/main.org" "~/org/goingon.org" "~/org/refcard.org")))
 (setq org-mobile-files (quote (org-agenda-files "~/org/main.org" "~/org/goingon.org" "~/org/refcard.org")))
 
-(setq org-agenda-custom-commands
-      '(("w" todo "NEXT")
-        ("h" agenda "" ((org-agenda-show-all-dates nil)))
-        ;("W" agenda "" ((org-agenda-ndays 21)
-        ;               (org-agenda-show-all-dates nil)))
-        ;("A" agenda ""
-        ; ((org-agenda-ndays 1)
-        ; (org-agenda-overriding-header "Today")))
-        ))
 
 
 ; ########  Custom Variables  ########
