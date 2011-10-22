@@ -127,14 +127,14 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 
 ;;; MobileOrg
-(setq org-directory "~/org")
-(setq org-mobile-inbox-for-pull "~/org/flagged.org")
-(setq org-mobile-directory "~/Dropbox/MobileOrg")
+(setq org-mobile-directory "~/org")
+(setq org-directory "~/org/LocalOrg") # local orgs
+(setq org-mobile-inbox-for-pull "~/org/LocalOrg/flagged.org")
 
 ;;;Custom
-(setq org-todo-keywords '((sequence "TODO" "WAITING" "|" "DONE")))
-(setq org-agenda-files (quote ("~/org/main.org" "~/org/goingon.org" "~/org/refcard.org")))
-(setq org-mobile-files (quote (org-agenda-files "~/org/main.org" "~/org/goingon.org" "~/org/refcard.org")))
+(setq org-todo-keywords '((sequence "TODO" "WAIT" "|" "DONE")))
+(setq org-agenda-files (quote ("~/org/LocalOrg/main.org" "~/org/LocalOrg/refcard.org")))
+(setq org-mobile-files (quote (org-agenda-files "~/org/LocalOrg/main.org" "~/org/LocalOrg/refcard.org")))
 
 
 
